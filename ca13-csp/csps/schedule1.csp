@@ -1,0 +1,4 @@
+a b c d e f
+Diehl Feild Ocean
+diff a,b c,d e,f 
+not-all-same a,c,e a,c,f a,d,e a,d,f b,c,e b,c,f b,d,e b,d,f

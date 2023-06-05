@@ -1,0 +1,18 @@
+     int newmove = this.move-i;
+                //this give the next location to put a pellet
+               if(player == 'b'){
+                   //if the player is the ai, ai cant have a valid move in board[6]
+                 if(newmove<0){
+                    newmove=14+newmove;
+                 } 
+                 if(newmove==6){
+                     newmove=5;
+                 }
+               }
+               if(player =='a'){
+                   //if the player is human, cant have a valid move of board[13]
+                   if(newmove <0){
+                       newmove=13+newmove;
+                   }
+               }
+               board[newmove]++;

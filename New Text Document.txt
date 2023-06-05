@@ -1,0 +1,99 @@
+    //     if(player == 'a'){
+        //         this.move = this.move%7;
+        //     }
+        //    //this is the number of pellets that are in the cup 
+        //     int pellets = board[move];
+        //     board[move] = 0;
+        //         for(int i = 1; i<pellets+1; i++){
+        //             int loc = (move-i)%14;
+        //             if(loc < 0){
+        //                 if(loc == -1 && player == 'b')
+        //                 {
+        //                     loc = 13;
+        //                 }
+        //                 else if(loc== -1)
+        //                 {
+        //                     loc = 12;
+        //                 }
+        //                 else
+        //                 {
+        //                     loc = loc+ 13;
+        //                 }
+        //             }
+        //             int count = board[loc];
+        //             board[loc] = count +1;    
+        //         }      
+
+
+
+
+
+if(state.board[i]> i)
+                    {
+                    successorState = state.clone();
+                    successorState.makeMove(nextPlayer, i+1);
+                    successorStates.add(successorState);
+                    }
+                    else{
+                        numUnder++;
+                        if(numUnder>3){
+                            //if there are around 3 or more places that are less than making a point
+                            //AI will pick the largest pool on their side
+                            int largestval = Integer.MIN_VALUE;
+                            int largestloc = -1;
+                            for(int j=0;j<6; j++){
+                                if(state.board[j]>largestval){
+                                    largestloc = j;
+                                    largestval = state.board[j];
+                                }
+                            }
+                            successorState = state.clone();
+                            successorState.makeMove(nextPlayer, largestloc+1);
+                            successorStates.add(successorState);
+
+                            {
+
+                            }
+                        }
+                    }
+
+
+
+
+if(state.board[i] != 0){
+                if(nextPlayer=='a'){
+                    successorState = state.clone();
+                    successorState.makeMove(nextPlayer, i+1);
+                    successorStates.add(successorState);
+                }
+                else if(nextPlayer=='b'){
+                    if(state.board[i]> i)
+                    {
+                    successorState = state.clone();
+                    successorState.makeMove(nextPlayer, i+1);
+                    successorStates.add(successorState);
+                    }
+                    else{
+                        numUnder++;
+                        if(numUnder>3){
+                            //if there are around 3 or more places that are less than making a point
+                            //AI will pick the largest pool on their side
+                            int largestval = Integer.MIN_VALUE;
+                            int largestloc = -1;
+                            for(int j=0;j<6; j++){
+                                if(state.board[j]>largestval){
+                                    largestloc = j;
+                                    largestval = state.board[j];
+                                }
+                            }
+                            successorState = state.clone();
+                            successorState.makeMove(nextPlayer, largestloc+1);
+                            successorStates.add(successorState);
+
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }

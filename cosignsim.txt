@@ -1,0 +1,7 @@
+the sum of feature values mult together 
+dividde by the sum of the squared value in one data set times the product of the squared sum of other value squared
+
+this will be -1 and 1
+
+
+then use the equation down below to ge te range of 0

@@ -1,0 +1,37 @@
+ char nextplayer = 'a';
+        if( state.player== 'b'){
+            nextplayer = 'a';
+        }
+        for(int i=0; i<6; i++){
+            //statesb no offset
+            statesb.add(state.board[i]);
+        } 
+        for(int i=7; i<13; i++){
+            //statesa offset of +6
+            statesa.add(state.board[i]);
+        } 
+        if(nextplayer == 'b'){
+            //player makes a decision so add all of the possible moves
+            for(int i =7; i<13; i++){
+                if(state.board[i]!= 0 && i<=5){
+                    successorState = state.clone();
+                    successorState.makeMove(nextplayer, i);
+                    successorStates.add(successorState);
+                }
+            }
+        }
+        else if(nextplayer == 'a'){
+            for(int j = statesa.size(); j>0; j--){
+                int largestidx = -1;
+                int largest = -1;
+                for(int i =0; i<j; i++){
+                    if(statesa.get(i)>largest){
+                        largest = statesa.get(i);
+                        largestidx = i;
+                    }
+                }
+                //remove largest fo
+            }
+        }
+
+        return successorStates;

@@ -1,0 +1,78 @@
+ /**
+         * Updates the given spot on the board with the player's mark.
+         * 
+         * @param player The player who made the most recent move (should be a or b)
+         * @param move The spot selected in the most recent move, should be val 1-6
+         */
+        public void makeMove(char player, int mo) {
+            move = mo%14;
+            int numpellets = board[move];
+            board[move] = 0;
+           
+
+            if (player == 'a'){
+                currentState.nextplayer = 'b';
+                // while(numpellets>0)
+                // {
+                    for(int i=move; i <= board.length; i++){
+                        if(numpellets ==0){
+                            break;
+                        }
+                        if(i==13){
+                            i= -1;
+                        }
+                        // if(i ==12 && numpellets> 0){
+                        //     i = -1;
+                        //     board[0]++;
+                        //     numpellets--;
+                        //     if(numpellets ==0 && board[0] > 1){
+                        //         numpellets = board[0];
+                        //         board[0] =0;
+                        //         move=0;
+                        //     }
+                        // }
+                        // else{
+                            board[i+1]++;
+                            numpellets--;
+                            if(numpellets ==0 && board[i+1]> 1 && i != 5){
+                                numpellets = board[i+1];
+                                board[i+1] = 0;
+                                move = i+1;
+                            }
+                        // }
+                    }
+                }
+            // }
+            else if(player == 'b'){
+                currentState.nextplayer = 'a';
+                // while(numpellets > 0){
+                    for(int i=move; i <= board.length; i++){
+                            if(numpellets ==0){
+                                break;
+                            }
+                            if(i==13){
+                                i= -1;
+                                continue;
+                            }
+                            // if(i ==6 && numpellets> 0){
+                            //     i = -1;
+                            //     board[7]++;
+                            //     numpellets--;
+                            //     if(numpellets ==0 && board[7] > 1){
+                            //         numpellets = board[7];
+                            //         board[7] =0;
+                            //         move=0;
+                            //     }
+                            // }
+                            // else{
+                                board[i+1]++;
+                                numpellets--;
+                                if(numpellets ==0 && board[i]> 1 && i != 12){
+                                    numpellets = board[i+1];
+                                    board[i+1] = 0;
+                                    move = i+1;
+                                }
+                            // }
+                    }
+                // }
+            }

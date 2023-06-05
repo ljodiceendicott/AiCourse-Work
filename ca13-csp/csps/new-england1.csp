@@ -1,0 +1,3 @@
+VT ME=blue NH MA RI CT
+blue red green
+diff ME,NH VT,NH MA,VT MA,NH CT,RI CT,MA RI,CT

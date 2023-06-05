@@ -1,0 +1,34 @@
+      /**
+         * Updates the given spot on the board with the player's mark.
+         * 
+         * @param player The player who made the most recent move (should be a or b)
+         * @param move The spot selected in the most recent move, should be val 1-6
+         */
+        public void makeMove(char player, int mo) {
+            move = mo%14;
+            int numpellets = board[move];
+            board[move] = 0;
+           
+
+            if (player == 'a'){
+                currentState.nextplayer = 'b';
+                // while(numpellets>0)
+                // {
+                    for(int i=0; i <= numpellets; i++){
+                       
+                    }
+                }
+            // }
+            else if(player == 'b'){
+                currentState.nextplayer = 'a';
+                // while(numpellets > 0){
+                for(int i=0; i <= numpellets; i++){
+                    int calcmove = move-i%13;
+                    if(calcmove == 6){
+                        calcmove = 5;
+                    }
+                    board[calcmove]++;
+                }
+                            // }
+                // }
+            }
